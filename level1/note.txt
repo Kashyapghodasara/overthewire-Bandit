@@ -1,0 +1,9 @@
+===Level 1===
+
+-> Find password from file called - (dash)
+
+- Command used => ls, cat
+
+- New Learning => - is special character so this one is accessed through ./ 
+               => cat ./-
+               => We can't directly access it like cat - or "-" 

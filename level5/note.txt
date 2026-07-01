@@ -1,0 +1,16 @@
+===Level 5===
+
+-> The pw of the next stored in a file somewhere under the inhere director and has 
+all of the following property.
+
+- Human readable
+- 1033 bytes in size - main clue
+- not executable
+
+- Command Used => ls, cd, cat, file, find
+               => find . -type f -size 1033c => answer -> ./maybehere07/.file2
+
+- We find which file which has 1033 bytes of character which is our main goal
+and there are more than 15 + directory and dozens of file inside it so we can't check 
+it one by one. 
+- So we find the file with exact 1033 byte in size with "c" character which denote bytes

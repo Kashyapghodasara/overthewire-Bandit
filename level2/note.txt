@@ -1,0 +1,12 @@
+===Level 3===
+
+-> Find a pw from filename with spaces and double dashes like 
+--spaces in this filename--
+
+- Command used => cat, ls
+
+- New Learning => It also used same ./ typo with ' ' single quotes
+               => cat ./'--spaces in this filename--'
+               => There is also \ and %20 used for spaces but here 
+                  double dash is the problem 
+               => I found this from Reddit

@@ -1,0 +1,21 @@
+===Level 9===
+
+-> The password for the next level is stored in the file data.txt in one of the 
+few human-readable strings, preceded(started) by several ‘=’ characters.
+
+- Command Used => ls, cat, strings, grep 
+
+- New Learning => 
+
+- The things is whole file written with non-human readable text but there is password
+text with human readable and it is started with several "="
+
+- So if file is in non-human readable format we can't perform grep operation so first
+we have to convert into string format by "strings" command
+
+- strings data.txt | grep "==="
+cL0========== the
+========== password
+>========== is
+R========== B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+

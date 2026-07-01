@@ -1,0 +1,15 @@
+===Level 8===
+
+-> The password for the next level is stored in file data.txt and is the only line of
+text that occurs only once
+
+- Command Used => ls, cat, sort, uniq
+
+- New Learning => 
+
+- The question feels like unclear weather, they said there is only single which is 
+unique for all of the given lines
+
+- cat data.txt | sort | uniq -u
+
+- Becuase uniq always works on sorted data

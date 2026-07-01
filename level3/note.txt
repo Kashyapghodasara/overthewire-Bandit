@@ -1,0 +1,13 @@
+===Level 3===
+
+-> Find a file which is hidden in inhere directory
+
+- Command used => ls -la, cd, cat
+
+- New Learning 
+=> Only ls command can't display hidden file you have to list with its file type and 
+it's permission, so it will show you all hidden files.
+
+=> ls -ls
+=> cat ...Hidden-From-You 
+

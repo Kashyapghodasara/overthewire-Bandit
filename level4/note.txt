@@ -1,0 +1,25 @@
+===Level 4===
+
+-> We have to find the file from given 9 files with same name format but twist is 
+most of the file is available with non-human readable data stream 
+-> I have to use the file command to find that specific file which has human readable
+data stream
+
+- Command Used => ls -la, file, cat
+
+- New Learning =>
+- File command is most important in this to identify the type of file 
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file00
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file01
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file02
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file03
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file04
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file05
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file06
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file07
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file08
+-rw-r----- 1 bandit5 bandit4 33 Jun 24 14:59 -file09
+
+- Most file contain "Data", single file contain "ASCII Plain", Single file contain
+"Public key"
+- I have to use cat ./-file06 to access ASCII plain text - which is next level password

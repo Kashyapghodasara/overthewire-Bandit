@@ -1,0 +1,5 @@
+===Level 0===
+
+-> Find Readme file in home directory
+
+- Command Used : ls, cat
