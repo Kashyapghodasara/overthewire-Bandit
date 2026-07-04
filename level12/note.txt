@@ -1,0 +1,13 @@
+=== Level 12===
+
+-> The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+- Command Used => ls, cat, mv, cp, mkdir, gunzip, bunzip2, tar -xf
+
+- New Learning =>
+
+- Level 12 is really complex, First I thought I can do this but at certain level I gave up and I have to follow the Solution.
+
+- After reading the problem, One thing I understood is our real file is compressed under multiple zip file so it was not going to be easy ! 
+
+- I was succeded at first level decompression - but then I am stucked in confusion and I don't knew what to do because then I encountered ".bin" file. I unziped then I got binary file then something new like "bzip". I don't even what it actually does and then I give up :)

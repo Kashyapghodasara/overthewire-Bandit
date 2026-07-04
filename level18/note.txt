@@ -1,0 +1,16 @@
+===Level 18===
+
+-> The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+- Command Used => ssh, cat
+
+- New Learning =>
+
+- As we know when we enter the ssh command and password, we will automatically logout so we can't directly get the password.
+
+- So we can directly pass the "cat readme" command in main ssh login command to bypass the logout problem
+
+# ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"
+
+- SSH is a remote command execution protocol, not just a way to get an interactive terminal
+- I have to watch the solution because I never faced something like before.

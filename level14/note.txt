@@ -1,0 +1,14 @@
+===Level 14===
+
+-> The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+- Command Used => nc or telnet
+
+- New Learning =>
+
+- We can connect to localhost with the "nc" or "telnet" command. I tried both.
+
+- "nc" command used tcp and udp protocol while "telnet" used telnet protocol and it is used to communicate with another host.
+
+# nc -v localhost 30000
+# telnet localhost 30000

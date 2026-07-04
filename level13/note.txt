@@ -1,0 +1,96 @@
+# === Level 13 ===
+
+## Bandit Level 13 → Level 14
+
+The password for the next level is stored in `/etc/bandit_pass/bandit14` and can only be read by user `bandit14`. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Look at the commands that logged you into previous Bandit levels, and find out how to use the key for this level.
+
+If you need help with this level, a hint file can be found in the home directory.
+
+Make sure to read the error messages as they are informative.
+
+* **Command Used =>** `ls -la`, `cat`, `touch`, `chmod`, `ssh -i`
+
+* **New Learning =>**
+
+# What a Level!! Insane
+
+* I never did something like this before. A pure **1 hour 10 minutes** invested in Level 13.
+
+* What they want from us is to try a new login method and forget the grandfather's password technique.
+
+* I will walk through every step one by one which we have to follow:-
+
+### 1.
+
+From the previous level, we got a password for Level 13, and if we go into this level, we get a private SSH key which is used to log into Level 14 (another way to log in).
+
+### 2.
+
+They already provide some articles and a HINT file to solve this level, which is really good. Sometimes you will be confused, but there are other websites on Google which explain SSH and all.
+
+### 3.
+
+The key we got from Level 13 is named `sshkey.private` - here the `.private` extension is important. Save this in your local drive.
+
+### 4.
+
+Now the most important thing is we've to change the file permission for security reasons. Change the permission to "read & write" for the root user only, like:
+
+`chmod 600 sshkey.private`
+
+* If you don't change the permission, you will get an error like:
+
+`Permissions 0664 for 'sshkey.private' are too open.`
+
+`It is required that your private key files are NOT accessible by others.`
+
+`This private key will be ignored.`
+
+### 5.
+
+Now you have a private key, and it is protected too, so try to log in through SSH:
+
+`ssh -i sshkey.private username@host -p port_number`
+
+* `-i` means `identity_file`.
+
+### 6.
+
+After running this command, you will be directly redirected to the OverTheWire server without asking for a password.
+
+### 7.
+
+Now go into `/etc/bandit_pass/bandit14`, and you will find the password for Level 14. So now you will directly log in through the password.
+
+---
+---
+
+## ===> Which Approach I Follow <===
+
+### 1.
+
+At first, I didn't even understand the problem or what they wanted from me. I read it 4–5 times, and then I got it slightly.
+
+### 2.
+
+I started my work by opening both article links they provided. I read the SSH Key article because it was the only important thing I knew.
+
+### 3.
+
+First, I directly pasted the whole SSH key into the command in place of the filename, and as usual, unwanted and non-understandable errors occurred. Then I read the documentation and knew I had to save this SSH key into a file, and I did this.
+
+### 4.
+
+I extracted the `sshkey.private` file and saved it to my local drive with the name `sshkey.txt`!
+
+### 5.
+
+Then I ran the SSH command with the filename and got some strange error. I couldn't understand it. Then I found on Google that we have to keep `-----BEGIN OPENSSH PRIVATE KEY-----` and `-----END OPENSSH PRIVATE KEY-----`!! I also did this, but nothing changed.
+
+### 6.
+
+Then I got a new error which said `UNPROTECTED PRIVATE KEY FILE` with permission `0644 (rw-r--r--)`. I decoded this with the help of Google, and then my mind clicked. I had read somewhere that someone gave permission to the file. At first, I ignored it, then I realized that the private key file should be protected from all users and groups, and its extension is `.private` too.
+
+### 7.
+
+I changed the file permission and re-ran the command, and I did it!!

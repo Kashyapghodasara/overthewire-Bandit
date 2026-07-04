@@ -1,0 +1,93 @@
+===Level 19===
+
+-> To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+- Command Used => ls -la
+
+- New Learning => 
+
+- You login
+↓
+
+bandit19
+UID = 11019
+↓
+
+Try reading password
+↓
+
+Linux checks:
+
+Does UID 11019 own the file?
+
+No.
+
+Permission denied.
+
+---
+
+Using the setuid program:
+
+bandit19
+↓
+
+Run bandit20-do
+
+↓
+
+bandit20-do has setuid
+
+↓
+
+Effective UID changes to 11020 (bandit20)
+
+↓
+
+Run:
+
+cat /etc/bandit_pass/bandit20
+
+↓
+
+Linux checks:
+
+Does UID 11020 own the file?
+
+Yes.
+
+Password printed.
+
+---
+
+The file is owned by bandit20:
+
+-rwsr-x--- 1 bandit20 bandit19 ...
+
+When bandit19 executes it, the process's effective UID becomes bandit20, allowing it to read /etc/bandit_pass/bandit20 even though bandit19 couldn't access that file directly. That's the core lesson of the level.
+-> "The s bit represents the file owner giving temporary privileges to whoever runs the program."
+
+---
+---
+
+In Bandit Level 19
+-rwsr-x--- 1 bandit20 bandit19 bandit20-do
+Owner = bandit20
+Group = bandit19
+You are logged in as bandit19
+
+"The s bit represents the file owner giving temporary privileges to whoever runs the program."
+
+When you execute:
+
+./bandit20-do id
+
+The output is similar to:
+
+uid=11019(bandit19) euid=11020(bandit20)
+
+This means:
+
+Real UID = bandit19 (the user who started the program)
+Effective UID = bandit20 (the owner of the executable)
+
+Linux checks file permissions using the effective UID, so the program can read files that belong to bandit20.
