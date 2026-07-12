@@ -1,0 +1,32 @@
+===Level 30===
+
+-> There is a git repository at ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit30.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+- Command Used => git clone, git branch -r, git tag, git show 
+
+- New Learning =>
+
+- In this level there is nothing releated to branches or commits.
+
+- We have to find the tag and display the content of it
+# git tag
+# secret
+
+# git show secret
+- We got a password 
+
+-> What is Tags :- "like Bookmark in Book"
+
+- **A Branch**  is like a bookmark that moves. Every time you write a new page, you move the bookmark to the very end of the book to keep tracking your current progress.
+
+- **A Tag**  is a sticky note glued to a page. It never moves. It stays on that specific page forever to mark a special moment.
+
+###  Why do developers use them?
+
+- To mark releases: To easily find "Version 1.0", "Version 2.0", etc.
+
+- For safety: If a new update breaks everything, you can instantly go back to the safely tagged version.
+
+- For teamwork: Everyone on the team knows exactly which version of the code is currently live for users.

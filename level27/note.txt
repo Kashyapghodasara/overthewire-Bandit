@@ -1,0 +1,20 @@
+===Level 27===
+
+-> There is a git repository at ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+- Command Used => git clone
+
+- New Learning =>
+
+- This is an introductory level of git and git clone of repository.
+
+- First we install the git into our machine.
+# apt install git-all
+
+- Then we clone the repository into local machine.
+# git clone "given-git-repo-string" local_repo_name
+
+- Now we extract the password from the README file.
+

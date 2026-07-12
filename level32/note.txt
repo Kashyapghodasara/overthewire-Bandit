@@ -1,0 +1,21 @@
+===Level 32===
+
+-> After all this git stuff, it’s time for another escape. Good luck!
+
+- Command Used => $0, ls -la, cat 
+
+- New Learning =>
+
+- After login into bandit32 - there is uppercase shell means whatever we write into it, it will convert into uppercase and then it passed to /bin/bash and then it execute.
+
+- So since the shell that we have currently is spawned by the uppercase shell. We should also be having the permissions/ privileges of user bandit33.
+
+# $ whoami
+# bandit33$ id
+# uid=11033(bandit33) gid=11032(bandit32) groups=11032(bandit32)
+
+- From the above we can confirm that we indeed have currently are bandit33.
+
+- Lets cat the password file to get the password for bandit33
+
+# $ cat /etc/bandit_pass/bandit33

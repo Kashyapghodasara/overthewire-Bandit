@@ -1,0 +1,23 @@
+===Level 29===
+
+-> There is a git repository at ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+- Command Used => git clone, get fetch origin, git branch -a, git show
+
+- New Learning => 
+
+- There are one local and 4 remote branch and all branch contains README.md so I have to find the password from these.
+
+- First I checked master branch commit history - I got nothing.
+
+- Then I fetch one by one branch and check all README.md file but I got nothing in "origin/HEAD" and "origin/master" branch.
+
+- Then I found direct command for branches to show .md file.
+
+# git show origin/master:README.md
+# git show origin/spoilts-dev:README.md
+# git shoe origin/dev:README.md
+
+- I got password in "origin/dev" branch.

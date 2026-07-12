@@ -1,0 +1,22 @@
+===Level 25===
+
+-> Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+    NOTE: if you’re a Windows user and typically use Powershell to ssh into bandit: Powershell is known to cause issues with the intended solution to this level. You should use command prompt instead.
+
+- Command Used => ls, more, cat, ssh
+
+- New Learning => 
+
+- On looking at the output it looks like we did connect to bandit26 but we where logged out immediately. In the question we have been told that the default shell for bandit26 is not “/bin/bash” so lets find out what shell is being used.
+
+- The “/etc/passwd” file consist of information regarding the users on the device along with the shell that is being used by each user.
+# cat /etc/passwd
+# “/usr/bin/showtext”
+
+- Then we have to use the more command to find the password with using two command in vim.
+
+# :set shell=/bin/bash
+# :shell
+
+- then press enter and press "esc" to get out of insert mode and then press enter and we are in bandit26 shell.

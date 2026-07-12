@@ -1,0 +1,22 @@
+===Level 22===
+
+-> A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+- Command Used => cat, cd
+
+- New Learning =>
+
+- Level 22 is good level with decent complexity, there is a minor detail, if you miss it you will be stuck.
+
+- cronjob_bandit23 told us that it automatically runs on every second and every minute (* * * * *) by bandit23
+
+- And if we run this script it will run as a bandit22 and It will give us the output of bandit22.
+
+- If we look it close to $Target we got that they hash the value of bandit_username. And hash means always same output. So we can directly run this line and change the $myname with bandit23. because bandit23 hashed value already store in /tmp/ file
+# echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+
+# cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw

@@ -1,0 +1,17 @@
+===Level 23===
+
+-> A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+- Keep in mind that your shell script is removed once executed, so you may want to keep a copy around.
+
+- Command Used => cat, cp, chmod, nano, ls -la
+
+- New Learning =>
+
+- In this level we have to create a bash script which take password from bandit24 and paste into another file but we are at level23 so we can't open bandit24 password but..
+
+- There is a cron job ! there is a folder name /var/spool/bandit24/foo which runs as bandit24 user every minute. Which will help to get password.
+
+- So we creates a simple bash script which we copy into /var/spool/bandit24/foo directory and when bandit24 cronjob will run it will read a bash script inside it and it contains
+# cat /etc/bandit_pass/bandit24 > /tmp/rnd/password
+
+- And when this script runs it will capture the password from bandit24 file and paste into password file in /tmp directory and this file will be deleted soon when next cron bash script execute.

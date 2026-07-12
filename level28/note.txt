@@ -1,0 +1,18 @@
+===Level 28===
+
+-> There is a git repository at ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+- Command Used => git clone, git log, git log -p 1
+
+- New Learning =>
+
+- In this level we intinally have to clone the repo into local directory and find the password from the README file.
+
+- But if we read the file password is not written, It showed up like (xxxxxxxxx)
+
+- Now there is only one way to find the password - Check the commit history
+# git log
+
+- In git log history we can see "info fix leak" commit display where they update the password to xxxxxxxx

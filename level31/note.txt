@@ -1,0 +1,43 @@
+===Level 31===
+
+-> There is a git repository at ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+- Command Used => git clone, git add ., git commit -m "", git push -u origin master
+
+- New Learning => 
+
+- In this level we have to learn how to push to the remote repo. 
+
+- First we create a key.txt and then add and commit and push but...
+
+- There is .gitignore file which contain
+# *.txt 
+means any file with .txt extenstion restricted to push.
+
+- So first we have to remove the this file.
+#rm .gitignore
+
+- Then add, commit and push
+# git add .
+# git commit -m "Adding file"
+# git push -u origin master
+
+- Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 283 bytes | 283.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: ### Attempting to validate files... ####
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+remote: Well done! Here is the password for the next level:
+remote: pWuj5jBQ6IgV0NXwiH6g1pXRF8S1YvbT 
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+
+

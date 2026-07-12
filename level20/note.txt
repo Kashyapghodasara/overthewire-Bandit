@@ -1,0 +1,23 @@
+===Level 20===
+
+-> There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+NOTE: Try connecting to your own network daemon to see if it works as you think
+
+- Command Used => ncat -lp, jobs
+
+- New Learning =>
+
+- Basically they wanted from us to create an simple localhost-server which listen something from client. Now who is client -> ./subconnect
+
+- "ncat" creates a simple server on port 1234 which already set with bandit20 password.
+- Now we connect with ./suconnect client on the same 1234 port - we pasted the password of the bandit20 and it will give us bandit21 level password.
+
+- Why do they make you start a listener then?
+
+Because suconnect was intentionally designed to behave as a client. It expects to connect to some server. Since there isn't one running, you provide a minimal server using ncat.
+
+- ncat -l 1234 → A very simple server that forwards input and output.
+- suconnect 1234 → The real application containing the authentication logic.
+- You → Type the current password.
+- suconnect → Verifies it and returns the next password.

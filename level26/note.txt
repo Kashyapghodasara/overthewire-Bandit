@@ -1,0 +1,21 @@
+===Level 26===
+
+-> Good job getting a shell! Now hurry and grab the password for bandit27!
+
+- Command Used => ls -la, cat
+
+- New Learning =>
+
+- Logged in to bandit26.
+- Escaped the restricted shell (using Vim).
+- Got access to a normal shell.
+- Used ls to find the files in the directory.
+- Read the file containing the password.
+- Used that password to log in to the next level.
+
+# v
+# :set shell=/bin/bash
+# :shell
+
+# ls
+# cat <filename>
