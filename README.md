@@ -3,4 +3,3 @@ Overthewire -  Bandit is the free open source Linux Practicing platform. I perso
 
 ---
 
-First Commit => **10 Level** Done and Upload
